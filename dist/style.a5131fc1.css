@@ -1,0 +1,365 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*::after {
+  box-sizing: border-box;
+}
+*::before {
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+input[type="text"]:focus + .input-icon {
+  width: 98%;
+  border: 1px solid blue;
+}
+
+.dialogText {
+  font-size: 14px;
+  color: #808080;
+}
+
+.logo img {
+  height: 24px;
+  width: 24px;
+}
+
+.globalHeader {
+  margin: 20px;
+  margin-top: 0;
+}
+@media (max-width: 500px) {
+  .baiduLogo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .globalHeader img {
+    height: 100px;
+  }
+}
+.globalHeader > .searchForm {
+  display: flex;
+  justify-content: space-between;
+}
+.globalHeader input {
+  width: 100%;
+  margin-right: 10px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background: #eeee;
+}
+.globalHeader button {
+  white-space: nowrap;
+  padding: 0 28px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  background-color: #0948f5;
+}
+.globalMain {
+  margin: 20px;
+}
+.siteList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.siteList > li {
+  margin-bottom: 10px;
+}
+.siteList .site {
+  width: 160px;
+  display: flex;
+  background-color: #eee;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  border: 1px solid #dddddd;
+  position: relative;
+  border-radius: 5px;
+}
+.siteList .site > .logo {
+  width: 48px;
+  height: 48px;
+  font-size: 64px;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  align-items: center;
+}
+.link {
+  font-size: 16px;
+  margin-top: 10px;
+}
+.siteAdd {
+  width: 160px;
+  display: flex;
+  background-color: #eee;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  position: relative;
+}
+.icon-btn {
+  display: block;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.sel {
+  display: none;
+  height: 100%;
+  width: 100%;
+  line-height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: white;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.sel > .revise:hover {
+  background-color: #eee;
+}
+.sel > .remove:hover {
+  background-color: #eee;
+}
+
+.siteList .addButton {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+/* .del > .icon {
+  width: 28px;
+  height: 28px;
+} */
+.siteList .addButton .icon {
+  width: 48px;
+  height: 48px;
+}
+
+.dialogWapper {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  border: none;
+  top: 0;
+}
+.dialog {
+  width: 90%;
+  max-width: 350px;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.dialog .dialog-1 {
+  margin: 20px;
+}
+.dialog-1 .text {
+  padding: 10px;
+  margin-left: 5px;
+}
+.tips {
+  color: red;
+  text-align: center;
+  font-size: 12px;
+}
+.dialog input {
+  width: 100%;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: #f1f2f3;
+  outline: none;
+  padding-left: 10px;
+}
+.input-icon {
+  width: 0%;
+  border: 1px solid transparent;
+  height: 1px;
+  position: relative;
+  transition: width 0.4s;
+  bottom: 15px;
+  left: 4px;
+}
+.dialogWapper .btnList {
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.btnList > .btn {
+  width: 60px;
+  height: 32px;
+  border: 1px solid #f1f2f3;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+#cancel {
+  color: rgb(118, 138, 248);
+}
+#finish {
+  background-color: #f1f2f3;
+}
+
+.lab {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  z-index: 2;
+}
+.lab input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 60%;
+}
+.icon2 {
+  max-width: 50px;
+  cursor: pointer;
+}
+@media (min-width: 500px) {
+  .globalHeader {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+  .baiduLogo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .baiduLogo img {
+    max-width: 350px;
+  }
+  .globalHeader input {
+    margin-right: 0;
+    border: none;
+    background: white;
+    outline: none;
+    padding: 0 20px;
+    border-radius: 50px;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  }
+  .globalHeader button {
+    display: none;
+  }
+
+  .siteList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .siteList > li {
+    cursor: pointer;
+  }
+  .siteList .site:hover {
+    background-color: rgb(210, 210, 211);
+  }
+  .siteList .site:hover .icon-btn {
+    display: block;
+  }
+  .siteList .site {
+    width: 112px;
+    height: 112px;
+    background-color: transparent;
+    border: none;
+  }
+  .icon-btn {
+    display: none;
+  }
+  .link {
+    font-size: 13px;
+  }
+  .icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .site > .logo {
+    background: #f1f3f4 !important;
+  }
+  .last > .siteAdd {
+    width: 112px;
+    height: 112px;
+    background-color: transparent;
+    border: none;
+  }
+  .siteAdd:hover {
+    background-color: rgb(210, 210, 211);
+  }
+
+  .siteList .addButton {
+    border-radius: 50%;
+    background: #f1f3f4;
+  }
+  .siteList .addButton .icon {
+    width: 24px;
+    height: 24px;
+  }
+  li {
+    z-index: 2;
+  }
+
+  .globalHeader {
+    position: relative;
+    z-index: 2;
+  }
+
+  #cover {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+  .dialogWapper {
+    z-index: 999;
+  }
+}
+
+
+/*# sourceMappingURL=style.a5131fc1.css.map */
