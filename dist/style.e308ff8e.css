@@ -168,6 +168,7 @@ input[type="text"]:focus + .input-icon {
 
 .dialogWapper {
   display: none;
+  border: 1px solid blue;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -238,22 +239,85 @@ input[type="text"]:focus + .input-icon {
 #finish {
   background-color: #f1f2f3;
 }
-
-.lab {
+#bgWapper {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#bgWapper .bgWapper-1 {
+  position: absolute;
+  width: 85%;
+  border-radius: 8px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  transform: translateX(-50%) translateY(-50%);
+}
+.bgWapper-1 .menu {
+  flex-basis: 100%;
+}
+.bgWapper-1 #closeBg {
+  position: absolute;
+  right: 15px;
+  top: 3px;
+  padding: 10px;
+  font-size: 16px;
+  padding-top: 0;
+  cursor: pointer;
+}
+.menu div {
+  border-radius: 0 16px 16px 0;
+  color: #202124;
+  cursor: pointer;
+  font-size: 14px;
+  height: 32px;
+  margin: 10px;
+  margin-left: 0;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+#filesWapperBtn {
+  margin-top: 25px;
+}
+.menu div .icon {
+  margin-right: 10px;
+}
+.menu div:hover {
+  background: rgb(185, 185, 185) 000;
+}
+#colorElem {
+  width: 0px;
+  height: 0px;
+  position: relative;
+  top: 75px;
+  right: 240px;
+}
+#backgroundImage {
+  border: none;
+  height: 100%;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  /* visibility: hidden; */
+  width: 100%;
+  z-index: -1;
+}
+#pen {
   position: absolute;
   bottom: 0;
   right: 5px;
   z-index: 2;
 }
-.lab input {
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 0;
-  top: 60%;
-}
+
 .icon2 {
   max-width: 50px;
+  max-height: 50px;
   cursor: pointer;
 }
 @media (min-width: 500px) {
@@ -359,7 +423,10 @@ input[type="text"]:focus + .input-icon {
   .dialogWapper {
     z-index: 999;
   }
+  .bgWapper-1 {
+    max-width: 350px;
+  }
 }
 
 
-/*# sourceMappingURL=style.a5131fc1.css.map */
+/*# sourceMappingURL=/style.e308ff8e.css.map */
