@@ -2,9 +2,15 @@
 const $siteList = $('.siteList')
 const $lastLi = $siteList.find('li.last')
 const x =localStorage.getItem('数据')
+const bgColor =JSON.parse(localStorage.getItem('color'))
 const xObject = JSON.parse(x)
-let isFalse=true
+let $body=$('body')[0]
+window.URL = window.URL || window.webkitURL;
+let colorArray=bgColor||['#fff']
+let z
 const logoUrl ='/favicon.ico'
+
+$body.style.backgroundColor=colorArray[colorArray.length-1]
 const hashMap =xObject||[
     { logo:'',url:'https://www.acfun.cn',name:'a站' },
     {logo:'',url:'https://www.bilibili.com/',name:'b站'},
@@ -18,6 +24,8 @@ const simplifyUrl=(url)=>{
     .replace(/\/.*/,'')
     
 }
+
+
 const render =()=>{
     $siteList.find('li:not(.last)').remove()
     hashMap.forEach((node,index)=>{
@@ -106,13 +114,15 @@ const $tips=$('.tips')[0]
 const $cover=$('#cover')[0]
 let $sel=$('.sel')
 let $iconBtn=$('#iconBtn')
-let $color=$('#color')[0]
-let $body=$('body')[0]
+
 let $dialogText1=$('.dialogText')[0]
 let $dialogText2=$('.dialogText')[1]
 
-$color.onchange=()=>{
-    $body.style.backgroundColor=$color.value
+colorElem.onchange=()=>{
+  
+    $body.style.backgroundColor=colorElem.value
+    colorArray.push($body.style.backgroundColor)
+    bgWapper.style.display='none'
 }
 $input1.onclick=()=>{
     $dialogText1.style.color='blue'
@@ -169,7 +179,48 @@ $('.siteAdd ').on('click',()=>{
         $dialogWapper.style.display='none'
     }
 })
+filesWapperBtn.addEventListener('click',(e)=>{
+    
+    if (fileElem) {
+    fileElem.click();
+  }
+  e.preventDefault();
+},false)
+colorWapperBtn.addEventListener('click',(e)=>{
+   
+    if(colorElem){
+        colorElem.click()
+    }
+    e.preventDefault()
+},false)
+handleFiles=function (files) {
+  if (!files.length) {
+    backgroundImage.alt='无图片'
+  } else {
+   
+      backgroundImage.src = window.URL.createObjectURL(files[0]);
+     
+      backgroundImage.onload = function() {
+        window.URL.revokeObjectURL(this.src);
+      }
+      bgWapper.style.display='none'
+    }
+  }
+closeBg.onclick=()=>{
+  
+  if(bgWapper.style.display!=='none'){
+    bgWapper.style.display='none'
+  }
+}
+pen.onclick=()=>{
+  
+  if(bgWapper.style.display!=='block'){
+    bgWapper.style.display='block'
+  }
+}
 window.onbeforeunload=()=>{
     const string = JSON.stringify(hashMap)
     localStorage.setItem('数据',string)
+    const abc=JSON.stringify(colorArray)
+    localStorage.setItem('color',abc)
 }

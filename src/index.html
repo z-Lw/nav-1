@@ -67,18 +67,44 @@
         </div>
 
     </div>
+    <div id="bgWapper"  >
+        <div class="bgWapper-1">
+            <div id="closeBg">X</div>
+            <div class="menu">
+                <div id="filesWapperBtn">
+                    <svg class="icon">
+                        <use xlink:href="#icontupian"></use>
+                    </svg>
+                    
+                    图片背景.</div>
+                <div id="colorWapperBtn">
+                    <svg class="icon">
+                        <use xlink:href="#iconyanse"></use>
+                    </svg>
+                    
+                    
+                    颜色背景</div>
+            </div>
+            <div class="pages">
+                    <input type="file" id="fileElem" accept="image/*" style="display: none;" onchange="handleFiles(this.files)">
+                    <input type="color" id="colorElem"  value="#fff">
+            </div>
+        </div>
+
+    </div>
+    <img   id="backgroundImage" alt="">
     
     
-    <div id="cover"></div>
-    <label for="color" class="lab">
+    <div id="cover" ></div>
+    <div  id="pen">
         <svg class="icon2">
             <use xlink:href="#iconpencil-1"></use>
         </svg>
-        <input type="color" id="color" name="color" value="#fff">
-    </label>
+        
+    </div>
     
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="//at.alicdn.com/t/font_2239630_tz5xq10crce.js"></script>
+    <script src="//at.alicdn.com/t/font_2239630_ly6k02efzr.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
